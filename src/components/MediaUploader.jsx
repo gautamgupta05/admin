@@ -11,7 +11,7 @@ export default function MediaManager({ onUploaded }) {
     fd.append("file", file);
     const res = await uploadMedia(fd);
     const data = res.data.data || res.data;
-    // pass url/path to parent
+   
     onUploaded(data.path || data.url || data);
     setFile(null);
     alert("Uploaded");

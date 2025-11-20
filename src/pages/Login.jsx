@@ -30,7 +30,7 @@ export default function Login() {
 
         <form onSubmit={submit} className="space-y-5">
 
-          {/* Email */}
+          
           <div>
             <label className="block text-gray-600 mb-1">Email</label>
             <input
@@ -42,7 +42,7 @@ export default function Login() {
             />
           </div>
 
-          {/* Password */}
+        
           <div>
             <label className="block text-gray-600 mb-1">Password</label>
             <input
@@ -54,7 +54,7 @@ export default function Login() {
             />
           </div>
 
-          {/* Button */}
+        
           <button
             type="submit"
             className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition"

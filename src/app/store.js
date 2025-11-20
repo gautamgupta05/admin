@@ -9,6 +9,6 @@ export const store = configureStore({
     auth: authReducer,
     posts: postsReducer,
     pages: pagesReducer,
-    media: mediaReducer, // ADD THIS
+    media: mediaReducer, 
   },
 });

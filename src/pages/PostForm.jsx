@@ -30,10 +30,10 @@ export default function PostForm() {
         setTitle(p.title || "");
         setExcerpt(p.excerpt || "");
         setContent(p.content || "");
-        // IMPORTANT
-        setExistingImage(p.featured_image); // full URL
-        setFeatured(null); // no new file selected
-        setFeaturedPreview(p.featured_image); // show existing image
+     
+        setExistingImage(p.featured_image); 
+        setFeatured(null); 
+        setFeaturedPreview(p.featured_image); 
       });
     }
   }, [editMode, id]);
@@ -45,12 +45,12 @@ export default function PostForm() {
   };
 
   const uploadAndGetPath = async () => {
-  // CASE 1: Editing & no new image selected → keep old image
+  // editing & no new image selected keep old image
   if (editMode && !featured) {
     return existingImage;
   }
 
-  // CASE 2: New image selected → upload
+  //  New image selected upload
   if (featured) {
     const fd = new FormData();
     fd.append("file", featured);

@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { loginApi, meApi, logoutUser } from "../../api/auth";
 
 
-// Load token safely
 let token = null;
 if (typeof window !== "undefined") {
   try {
@@ -60,7 +59,7 @@ const authSlice = createSlice({
       .addCase(fetchMe.fulfilled, (state, action) => {
         state.user = action.payload;
       })
-      // LOGOUT SUCCESS
+      
       .addCase(logoutRequest.fulfilled, (state) => {
         state.token = null;
         state.user = null;

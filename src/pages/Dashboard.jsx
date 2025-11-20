@@ -8,8 +8,8 @@ export default function Dashboard() {
   const nav = useNavigate();
 
   const handleLogout = async () => {
-    await dispatch(logoutRequest()); // call API + remove token
-    nav("/login"); // send user to login page
+    await dispatch(logoutRequest()); 
+    nav("/login"); 
   };
 
   return (

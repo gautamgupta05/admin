@@ -4,6 +4,8 @@ import * as api from "../api/pages";
 import { useDispatch } from "react-redux";
 import { createNewPage, updateExistingPage } from "../features/pages/pagesSlice";
 
+import BackButton from "../components/BackButton";
+
 export default function PageForm() {
   const { id } = useParams();
   const editMode = !!id;
@@ -40,6 +42,9 @@ export default function PageForm() {
 
   return (
     <div className="p-6">
+      <div className="flex justify-between mb-4">
+               <BackButton />
+            </div>
       <form onSubmit={submit} className="max-w-3xl">
         <h1 className="text-xl font-bold mb-4">{editMode ? "Edit Page" : "Create Page"}</h1>
 

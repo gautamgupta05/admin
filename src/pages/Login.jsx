@@ -14,7 +14,7 @@ export default function Login() {
     try {
       const res = await dispatch(login({ email, password })).unwrap();
       // token is saved in slice
-      nav("/posts");
+      nav("/");
     } catch (err) {
       alert("Login failed: " + (err?.message || "check credentials"));
     }

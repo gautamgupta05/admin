@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getMedia, removeMedia } from "../features/media/mediaSlice";
 import { uploadMedia } from "../api/media";
+import BackButton from "../components/BackButton";
 
 export default function MediaManager() {
   const dispatch = useDispatch();
@@ -36,8 +37,10 @@ export default function MediaManager() {
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Media Library</h1>
-
+      <div className="flex justify-between mb-4">
+        <BackButton />
+        <h1 className="text-2xl font-bold mb-4">Media Library</h1>
+      </div>
       <div className="flex items-center gap-4 mb-6">
         <input
           type="file"
@@ -69,10 +72,7 @@ export default function MediaManager() {
       <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-4">
         {media.map((m) => (
           <div key={m.id} className="border rounded p-2 relative">
-            <img
-              src={m.url}
-              className="w-full h-32 object-cover rounded"
-            />
+            <img src={m.url} className="w-full h-32 object-cover rounded" />
 
             <p className="text-sm mt-2 break-all">{m.filename}</p>
 

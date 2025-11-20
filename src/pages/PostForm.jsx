@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 // import ReactQuill from "react-quill";
 // import "react-quill/dist/quill.snow.css";
+import BackButton from "../components/BackButton";
+
 import * as postsApi from "../api/posts";
 import { useDispatch } from "react-redux";
 import {
@@ -85,6 +87,13 @@ export default function PostForm() {
 
   return (
     <div className="p-6">
+      <div className="flex justify-between mb-4">
+         <BackButton />
+        <h1 className="text-xl font-bold">Create Post</h1>
+      </div>
+      <div className="justify-between">
+
+     
       <form onSubmit={submit} className="max-w-3xl">
         <input
           value={title}
@@ -133,6 +142,7 @@ export default function PostForm() {
           </button>
         </div>
       </form>
+       </div>
     </div>
   );
 }

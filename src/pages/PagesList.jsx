@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getPages, deletePageById } from "../features/pages/pagesSlice";
+import BackButton from "../components/BackButton";
 
 export default function PagesList() {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ export default function PagesList() {
   return (
     <div className="p-6">
       <div className="flex justify-between mb-4">
+         <BackButton />
         <h1 className="text-xl font-bold">Pages</h1>
         <Link to="/pages/create" className="px-4 py-2 bg-blue-600 text-white rounded">
           + Create Page

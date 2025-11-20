@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPosts, removePost, publishToggle } from "../features/posts/postsSlice";
 import { Link } from "react-router-dom";
+import BackButton from "../components/BackButton";
 
 export default function PostsList() {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ export default function PostsList() {
   return (
     <div className="p-6">
       <div className="flex justify-between items-center mb-4">
+         <BackButton />
         <h1 className="text-xl">Posts</h1>
         <Link to="/posts/new" className="px-3 py-1 bg-green-600 text-white rounded">New Post</Link>
       </div>
